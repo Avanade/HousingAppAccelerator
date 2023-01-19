@@ -1,0 +1,296 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ava_sharedcommondataserviceforapps_cf475"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "53e114fa-12c0-47d9-99c6-27b46caa4799"
+          },
+          "type": "Request",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "InitializeEntityType_Value": {
+                  "type": "string",
+                  "description": "Enter initial value",
+                  "x-ms-powerflows-param-ispartial": false
+                },
+                "InitializeRecordGUID_Value": {
+                  "type": "any"
+                },
+                "InitializeEngagementOpportunityTemplateGUID_Value": {
+                  "type": "string",
+                  "description": "Enter initial value",
+                  "x-ms-powerflows-param-ispartial": false
+                }
+              },
+              "required": [
+                "InitializeEntityType_Value",
+                "InitializeRecordGUID_Value",
+                "InitializeEngagementOpportunityTemplateGUID_Value"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Initialize_EntityType": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "d6aeace4-d36e-4986-a859-1f4c48c4308e"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "EntityType",
+                "type": "string",
+                "value": "@{triggerBody()['InitializeEntityType_Value']}"
+              }
+            ]
+          }
+        },
+        "Initialize_EntityRecordGUID": {
+          "runAfter": {
+            "Initialize_EntityType": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "6c97cfdf-7b2f-45f1-9771-b7ed2a31f40f"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "EntityRecordGUID",
+                "type": "string",
+                "value": "@{triggerBody()['InitializeRecordGUID_Value']}"
+              }
+            ]
+          }
+        },
+        "Initialize_EngagementOpportunityTemplateGUID": {
+          "runAfter": {
+            "Initialize_EntityRecordGUID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "16613a18-4d89-453a-8d0f-26084fb5c134"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "EngagementOpportunityTemplateGUID",
+                "type": "string",
+                "value": "@{triggerBody()['InitializeEngagementOpportunityTemplateGUID_Value']}"
+              }
+            ]
+          }
+        },
+        "Get_Engagement_Opportunity_Record": {
+          "runAfter": {
+            "Initialize_EngagementOpportunityTemplateGUID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ed69939b-ca37-40d5-99ae-27a8cc35532d"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "ava_engagementopportunitytemplates",
+              "recordId": "@variables('EngagementOpportunityTemplateGUID')"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        },
+        "Switch": {
+          "runAfter": {
+            "Get_Engagement_Opportunity_Record": [
+              "Succeeded"
+            ]
+          },
+          "cases": {
+            "Housing_Location": {
+              "case": "Housing Location",
+              "actions": {
+                "Get_Housing_Location": {
+                  "runAfter": {},
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "ava_housinglocations",
+                      "recordId": "@variables('EntityRecordGUID')"
+                    },
+                    "authentication": {
+                      "type": "Raw",
+                      "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                    }
+                  }
+                },
+                "Add_Engagement_Opportunity_Housing_Location": {
+                  "runAfter": {
+                    "Get_Housing_Location": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "msnfp_engagementopportunities",
+                      "item/msnfp_engagementopportunitytitle": "@outputs('Get_Engagement_Opportunity_Record')?['body/ava_name']",
+                      "item/msnfp_description": "@outputs('Get_Engagement_Opportunity_Record')?['body/ava_description']",
+                      "item/ava_housinglocationid@odata.bind": "ava_housinglocations\\@{variables('EntityRecordGUID')}",
+                      "item/msnfp_location": "@outputs('Get_Housing_Location')?['body/ava_name']",
+                      "item/msnfp_type": 751960000
+                    },
+                    "authentication": {
+                      "type": "Raw",
+                      "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                    }
+                  }
+                }
+              }
+            },
+            "Work_Item": {
+              "case": "Work Item",
+              "actions": {
+                "Get_Work_Item": {
+                  "runAfter": {},
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "GetItem",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "msnfp_workitems",
+                      "recordId": "@variables('EntityRecordGUID')"
+                    },
+                    "authentication": {
+                      "type": "Raw",
+                      "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                    }
+                  }
+                },
+                "Add_Engagement_Opportunity_Work_Item": {
+                  "runAfter": {
+                    "Get_Work_Item": [
+                      "Succeeded"
+                    ]
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "host": {
+                      "connectionName": "shared_commondataserviceforapps",
+                      "operationId": "CreateRecord",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                    },
+                    "parameters": {
+                      "entityName": "msnfp_engagementopportunities",
+                      "item/msnfp_engagementopportunitytitle": "@outputs('Get_Engagement_Opportunity_Record')?['body/ava_name']",
+                      "item/msnfp_description": "@outputs('Get_Engagement_Opportunity_Record')?['body/ava_description']",
+                      "item/ava_housinglocationid@odata.bind": "ava_housinglocations\\@{outputs('Get_Work_Item')?['body/_ava_housinglocationid_value']}",
+                      "item/msnfp_type": 751960000,
+                      "item/msnfp_workItemId@odata.bind": "msnfp_workitems\\@{variables('EntityRecordGUID')}"
+                    },
+                    "authentication": {
+                      "type": "Raw",
+                      "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "default": {
+            "actions": {}
+          },
+          "expression": "@triggerBody()['InitializeEntityType_Value']",
+          "metadata": {
+            "operationMetadataId": "95db9430-76f2-469c-b8b5-1e0192572c07"
+          },
+          "type": "Switch"
+        },
+        "Respond_to_a_PowerApp_or_flow": {
+          "runAfter": {
+            "Switch": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b1155aec-e0c7-4f3e-95df-6838e07d5bd1"
+          },
+          "type": "Response",
+          "kind": "PowerApp",
+          "inputs": {
+            "statusCode": 200,
+            "body": {
+              "var_flowresponse": "@{outputs('Get_Engagement_Opportunity_Record')?['body/ava_name']} is created."
+            },
+            "schema": {
+              "type": "object",
+              "properties": {
+                "var_flowresponse": {
+                  "title": "var_FlowResponse",
+                  "x-ms-dynamically-added": true,
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

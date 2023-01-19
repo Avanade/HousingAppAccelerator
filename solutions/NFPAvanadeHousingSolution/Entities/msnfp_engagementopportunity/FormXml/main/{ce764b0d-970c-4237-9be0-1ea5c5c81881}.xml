@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ce764b0d-970c-4237-9be0-1ea5c5c81881}</formid>
+    <IntroducedVersion>2.4.1.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{6094d813-c192-428b-8428-01534adb7d2b}" IsUserDefined="1" ordinalvalue="0">
+          <columns>
+            <column width="100%" id="0">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{ddbdf29d-5222-452f-b7dd-6a0d2104fbb3}" name="{ddbdf29d-5222-452f-b7dd-6a0d2104fbb3}" columns="11" locklevel="0" labelwidth="130" celllabelalignment="Left" celllabelposition="Left" ordinalvalue="0">
+                  <rows>
+                    <row>
+                      <cell id="{941b6bbe-1f9d-4554-b3f1-dfa8094777fb}" showlabel="true" locklevel="1" visible="false" ordinalvalue="10012" solutionaction="Modified" />
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{63999530-915d-40f4-a3c3-1a1c7c662b7c}" ordinalvalue="10012" solutionaction="Removed" />
+                    </row>
+                    <row>
+                      <cell id="{35495f47-31a9-48bf-9a7f-1fe87d8d00db}" locklevel="0" colspan="1" rowspan="1" ordinalvalue="10011" solutionaction="Added">
+                        <labels>
+                          <label description="Housing Location" languagecode="1033" />
+                        </labels>
+                        <control id="ava_housinglocationid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ava_housinglocationid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+    </form>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

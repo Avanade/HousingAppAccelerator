@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AppModule>
+  <UniqueName>ava_NFPHousing</UniqueName>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <WebResourceId>483cdba9-cb13-ed11-b83d-000d3a36effb</WebResourceId>
+  <OptimizedFor></OptimizedFor>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+  <FormFactor>1</FormFactor>
+  <ClientType>4</ClientType>
+  <NavigationType>0</NavigationType>
+  <AppModuleComponents>
+    <AppModuleComponent type="1" schemaName="ava_engagementopportunitytemplate" />
+    <AppModuleComponent type="1" schemaName="ava_housinglocation" />
+    <AppModuleComponent type="1" schemaName="ava_housinglocationbusinessprocess" />
+    <AppModuleComponent type="1" schemaName="ava_housingsubmission" />
+    <AppModuleComponent type="1" schemaName="contact" />
+    <AppModuleComponent type="1" schemaName="msnfp_engagementopportunity" />
+    <AppModuleComponent type="1" schemaName="msnfp_need" />
+    <AppModuleComponent type="1" schemaName="msnfp_workitem" />
+    <AppModuleComponent type="26" id="{140fe133-0a13-ed11-b83d-000d3a36effb}" />
+    <AppModuleComponent type="26" id="{db41b625-7419-ed11-b83e-00224804d5d9}" />
+    <AppModuleComponent type="26" id="{f6f571d0-051e-ed11-b83e-000d3a3b4b50}" />
+    <AppModuleComponent type="29" id="{414de715-da13-ed11-b83d-000d3a36e0e7}" />
+    <AppModuleComponent type="59" id="{2ff3ebea-6310-4dde-b3a1-e1144ea42b7b}" />
+    <AppModuleComponent type="60" id="{bdb0ae1c-32fa-4374-b637-8dafe107bc44}" />
+    <AppModuleComponent type="60" id="{fc43ad22-e213-ed11-b83d-000d3a36e0e7}" />
+    <AppModuleComponent type="60" id="{70ad8b15-e3f3-4d7d-9e4b-16cb4e51b484}" />
+    <AppModuleComponent type="60" id="{ff652dcb-8718-ed11-b83e-00224804d22f}" />
+    <AppModuleComponent type="60" id="{a80fe69b-7319-ed11-b83e-00224804d22f}" />
+    <AppModuleComponent type="60" id="{ce764b0d-970c-4237-9be0-1ea5c5c81881}" />
+    <AppModuleComponent type="60" id="{449cdf7b-fe16-ed11-b83e-00224804d5d9}" />
+    <AppModuleComponent type="60" id="{39a94c14-ce13-ed11-b83d-000d3a36effb}" />
+    <AppModuleComponent type="62" schemaName="ava_NFPHousing" />
+  </AppModuleComponents>
+  <AppModuleRoleMaps>
+    <Role id="{627090ff-40a3-4053-8790-584edc5be201}" />
+    <Role id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+  </AppModuleRoleMaps>
+  <LocalizedNames>
+    <LocalizedName description="NFP Housing" languagecode="1033" />
+  </LocalizedNames>
+  <appelements>
+    <appelement uniquename="ava_ava_NFPHousing_canvasappid_ava_nfphousingdefaultcommandlibrary_d4872">
+      <canvasappid>
+        <name>ava_nfphousingdefaultcommandlibrary_d4872</name>
+      </canvasappid>
+      <iscustomizable>1</iscustomizable>
+      <name>ava_ava_NFPHousing_canvasappid_ava_nfphousingdefaultcommandlibrary_d4872</name>
+    </appelement>
+  </appelements>
+</AppModule>

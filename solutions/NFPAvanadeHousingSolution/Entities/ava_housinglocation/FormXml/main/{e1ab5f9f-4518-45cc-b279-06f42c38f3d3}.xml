@@ -1,0 +1,742 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{e1ab5f9f-4518-45cc-b279-06f42c38f3d3}</formid>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" maxWidth="3200">
+      <tabs>
+        <tab verticallayout="true" id="{354c3960-cb37-4688-93b1-62a748abf458}" IsUserDefined="1" name="General">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="34%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{20641e53-aec1-411e-b1ee-e8afbf0910d5}" name="general">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3a3da937-e64e-49e8-8a80-334818891781}" visible="false">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ava_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ava_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c638fd71-9f8b-421c-baac-9c8788a685d9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Landlord" languagecode="1033" />
+                        </labels>
+                        <control id="ava_landlordid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ava_landlordid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bc35f4da-0c3f-4dda-88a0-64d856867629}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Parent Location" languagecode="1033" />
+                        </labels>
+                        <control id="ava_parentlocationid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ava_parentlocationid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell locklevel="0" id="{983a09a2-695f-4045-8c30-1919360aec59}" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="New QV control 1659097354735" languagecode="1033" />
+                        </labels>
+                        <control id="QuickviewControl1659097354735" classid="{5C5600E0-1D6E-4205-A272-BE80DA87FD42}" datafieldname="ava_landlordid">
+                          <parameters>
+                            <DisplayAsCustomer360Tile>false</DisplayAsCustomer360Tile>
+                            <QuickForms>&lt;QuickFormIds&gt;&lt;QuickFormId entityname="contact"&gt;29de27bc-a257-4f29-99cf-bab4a84e688f&lt;/QuickFormId&gt;&lt;/QuickFormIds&gt;</QuickForms>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0840575e-d790-4021-9f72-495f7a022646}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Status Reason" languagecode="1033" />
+                        </labels>
+                        <control id="statuscode" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="statuscode" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="occupant" id="972f087e-9f33-4380-9d2f-b1c33f7f0409" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Occupant" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9408445e-9310-4ff5-8261-354932003239}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Current Occupant" languagecode="1033" />
+                        </labels>
+                        <control id="ava_occupantid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ava_occupantid" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="Address" id="76bf7edd-223c-4a60-beac-61a1052fc2eb" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Address" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d84de348-a204-42d5-82c1-2bf4541f58e0}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Street Line 1" languagecode="1033" />
+                        </labels>
+                        <control id="ava_address1_streetline1" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_address1_streetline1" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4abd6da5-1d04-4e90-9a8f-99bf1a79001c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Street Line 2" languagecode="1033" />
+                        </labels>
+                        <control id="ava_address1_streetline2" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_address1_streetline2" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9ee23d45-dcbf-4fdc-8f29-b7783d474f0a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="City" languagecode="1033" />
+                        </labels>
+                        <control id="ava_address1_city" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_address1_city" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{558a5725-00db-472b-b010-794aebf83d6e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="State" languagecode="1033" />
+                        </labels>
+                        <control id="ava_address1_state" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_address1_state" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{08ca72a1-69a6-42c5-b406-f987c00788ef}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Zip/Postalcode" languagecode="1033" />
+                        </labels>
+                        <control id="ava_address1_postalcode" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_address1_postalcode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{48ec196b-b61b-49c8-b6ae-ed3e7e49dafc}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Maps URL" languagecode="1033" />
+                        </labels>
+                        <control id="ava_mapsurl" classid="{71716B6C-711E-476C-8AB8-5D11542BFB47}" datafieldname="ava_mapsurl" disabled="true" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="housing_details" id="9585ac1b-a811-4c96-91e9-e1272a79c9db" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Housing Details" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7bc3f0e1-b17b-42c2-8aa2-36a4c74b2dde}" locklevel="0" colspan="1" rowspan="1" visible="true">
+                        <labels>
+                          <label description="Housing Type" languagecode="1033" />
+                        </labels>
+                        <control id="ava_housingtype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ava_housingtype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{73ef7175-31ee-451c-b27a-48ee931edcf7}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Linked Available Locations" languagecode="1033" />
+                        </labels>
+                        <control id="ava_linkedavailablelocations" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ava_linkedavailablelocations" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2f67855b-396f-4157-a0a0-53ce91fbfb5e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Linked Locations" languagecode="1033" />
+                        </labels>
+                        <control id="ava_linkedlocations" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="ava_linkedlocations" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c2f7349d-1d7f-4ac8-b58c-ca11c4482e69}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Other Housing Type" languagecode="1033" />
+                        </labels>
+                        <control id="ava_housingtypeother" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_housingtypeother" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{17b043fd-6225-4240-a93b-5ba540641304}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Property Build" languagecode="1033" />
+                        </labels>
+                        <control id="ava_propertybuild" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_propertybuild" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8a5ac4b6-3042-41ea-83c6-c97dabd470bf}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Number of bathrooms" languagecode="1033" />
+                        </labels>
+                        <control id="ava_numberofbathrooms" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ava_numberofbathrooms" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6ab39e17-73c9-48e8-8148-e16f34cc5a74}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Number of bedrooms" languagecode="1033" />
+                        </labels>
+                        <control id="ava_numberofbedrooms" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ava_numberofbedrooms" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{eb7a1c98-01ff-4845-8aa8-3dcdea33a5bf}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Pets Allowed" languagecode="1033" />
+                        </labels>
+                        <control id="ava_petsallowed" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ava_petsallowed" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{1204c965-256a-447e-9087-fc4ae1f6782b}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Child Friendly" languagecode="1033" />
+                        </labels>
+                        <control id="ava_childfriendly" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="ava_childfriendly" disabled="false" uniqueid="{97933e7e-7b96-46ce-8af0-d72ba5067371}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{0a610de3-498f-410d-bda1-8f4ba669a8ee}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Child Friendly Filter Value" languagecode="1033" />
+                        </labels>
+                        <control id="ava_childfriendlyfiltervalue" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_childfriendlyfiltervalue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{33c8eee0-c9ca-4de4-a2dc-de10781e428c}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Public Transport Nearby" languagecode="1033" />
+                        </labels>
+                        <control id="ava_publictransportnearby" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="ava_publictransportnearby" disabled="false" uniqueid="{e38f938e-bc88-4f97-82e3-a0af274288f1}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{75cf4e71-70e5-45ff-895f-415673a9c8bd}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Public Transport Filter Value" languagecode="1033" />
+                        </labels>
+                        <control id="ava_publictransportfiltervalue" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_publictransportfiltervalue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{90c97d4f-df9c-478a-be90-2b8478e09702}" locklevel="0" colspan="1" rowspan="4">
+                        <labels>
+                          <label description="Additional Information" languagecode="1033" />
+                        </labels>
+                        <control id="ava_additionalinformation" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="ava_additionalinformation" disabled="false" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+                <section name="housing_financials" id="0da90092-b040-49dd-be05-2e317e0a723f" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Housing Financials" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7ff2b8e5-9268-4ce1-a97a-ee38ac6f28d9}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Rent Indication" languagecode="1033" />
+                        </labels>
+                        <control id="ava_rentindication" classid="{533B9E00-756B-4312-95A0-DC888637AC78}" datafieldname="ava_rentindication" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ef4ab849-7183-49d7-8ad1-738a31720079}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Rent Period" languagecode="1033" />
+                        </labels>
+                        <control id="ava_rentperiod" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ava_rentperiod" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="timeline" id="8d46b47f-9b3f-4e26-a268-ba1bcce2ee78" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Timeline" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell showlabel="false" rowspan="15" auto="false" id="{c177b89e-8a94-47d0-85f3-827040d1aafe}" colspan="1">
+                        <labels>
+                          <label description="Note Text" languagecode="1033" />
+                        </labels>
+                        <control id="notescontrol" classid="{06375649-c143-495e-a496-c962e5b4488e}">
+                          <parameters>
+                            <DefaultTabId>NotesTab</DefaultTabId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="workitems" id="bf47ec6f-a362-4185-be7c-bf18181b2a59" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Work ITems" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="workitemsgrid" id="7d8d643c-ee3d-490a-a13e-bc1e4699ad41" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Work Items Grid" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{535a4e6e-8330-4350-b1f8-8a734114614d}" rowspan="4" colspan="1" auto="false" showlabel="false">
+                        <labels>
+                          <label description="Work Items Subgrid" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="workitemssubgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>true</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>msnfp_workitem</TargetEntityType>
+                            <ViewId>{DB41B625-7419-ED11-B83E-00224804D5D9}</ViewId>
+                            <ViewIds>{ED243260-E617-433E-B89A-780BDC896DE9},{DB41B625-7419-ED11-B83E-00224804D5D9}</ViewIds>
+                            <RelationshipName>ava_msnfp_workitem_housinglocationid_ava_hous</RelationshipName>
+                            <VisualizationId>{AE76C599-374F-EA11-A812-000D3A33FA14}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="engagements" id="e17df740-2390-424f-af7e-e19a7d96b765" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
+          <labels>
+            <label description="Engagements" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="67%">
+              <sections>
+                <section name="engagementsection" id="c73d4b43-efee-4265-98ab-9319e2d9d777" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Engagement Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{870e4b38-32f1-4c45-aadd-9e47f466eebd}" rowspan="4" colspan="1" auto="false" showlabel="false">
+                        <labels>
+                          <label description="Engagement Opportunities" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="engagementopportunities" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}" uniqueid="{ad910223-6329-3a6e-1190-8c7e9d0a4158}">
+                          <parameters>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>true</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>msnfp_engagementopportunity</TargetEntityType>
+                            <ViewId>{F6F571D0-051E-ED11-B83E-000D3A3B4B50}</ViewId>
+                            <ViewIds>{E02AB9EB-FA3C-4245-A219-478BF1CF5391},{F6F571D0-051E-ED11-B83E-000D3A3B4B50}</ViewIds>
+                            <RelationshipName>ava_msnfp_engagementopportunity_housinglocati</RelationshipName>
+                            <HeaderColorCode />
+                            <IsUserView>false</IsUserView>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="33%">
+              <sections>
+                <section name="engagements_section_3" showlabel="true" showbar="false" locklevel="0" id="{8d09ba0a-3245-2611-aa91-eda887e4dc7d}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Quick Create Engagement Opportunity" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a57168bc-037d-c24c-0517-46a57547c767}" showlabel="false" locklevel="0">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ava_name" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="ava_name" disabled="false" uniqueid="{e7e67176-ad5c-4096-8b70-3a9030f97d6f}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="linkedunits" id="111c4d93-b7a6-4371-b0b6-39d654539b5b" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Linked Units" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_5_section_1" id="76a6cfb6-ef0a-4d94-9f36-a78da66eb398" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell locklevel="0" id="{42e67665-c22b-414a-a695-92ad4c617b49}" rowspan="4" colspan="1" auto="false" showlabel="false">
+                        <labels>
+                          <label description="Linked Units Grid" languagecode="1033" />
+                        </labels>
+                        <control indicationOfSubgrid="true" id="linkedunitsgrid" classid="{E7A81278-8635-4D9E-8D4D-59480B391C5B}">
+                          <parameters>
+                            <RecordsPerPage>6</RecordsPerPage>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <ChartGridMode>All</ChartGridMode>
+                            <TargetEntityType>ava_housinglocation</TargetEntityType>
+                            <ViewId>{67610B98-E713-ED11-B83D-000D3A36E0E7}</ViewId>
+                            <ViewIds>{F95A70D8-61FD-4953-9CC3-D116B4A7ABF1},{67610B98-E713-ED11-B83D-000D3A36E0E7}</ViewIds>
+                            <RelationshipName>ava_ava_housinglocation_parentlocationid_ava_</RelationshipName>
+                            <VisualizationId>{603C5CC8-CD13-ED11-B83D-000D3A36EFFB}</VisualizationId>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="admin" id="83f7a1c3-4510-4b36-ab86-b456b9a3fd0c" IsUserDefined="0" locklevel="0" showlabel="true">
+          <labels>
+            <label description="Administration" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_2_section_1" id="cded73f7-d33d-45d8-8614-8e63cfb25cb8" IsUserDefined="0" locklevel="0" showlabel="false" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="11" labelwidth="115">
+                  <labels>
+                    <label description="New Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{7762d002-80f3-4726-ad41-35ac19fe0e55}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Created By" languagecode="1033" />
+                        </labels>
+                        <control id="createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+                      </cell>
+                      <cell id="{6d135103-45a2-44b7-ae8f-45e3cbbf9481}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Distance to Local Office" languagecode="1033" />
+                        </labels>
+                        <control id="ava_distancelocaloffice" classid="{0D2C745A-E5A8-4C8F-BA63-C6D3BB604660}" datafieldname="ava_distancelocaloffice" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6aa66ae7-0f43-4303-a7fe-43f53fa46dd3}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Created On" languagecode="1033" />
+                        </labels>
+                        <control id="createdon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="createdon" disabled="false" />
+                      </cell>
+                      <cell id="{8e2c8745-d38b-4f0d-8155-d16f797d6ec5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Latitude" languagecode="1033" />
+                        </labels>
+                        <control id="ava_address1_latitude" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_address1_latitude" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{8decb53e-8d7d-4ee8-b8c8-e37fc190de30}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Modified By" languagecode="1033" />
+                        </labels>
+                        <control id="modifiedby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="modifiedby" disabled="false" />
+                      </cell>
+                      <cell id="{a0b06606-8ccc-45d0-9f78-54a8b5047303}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ee1f6e9f-0c11-4955-86c0-d8009597c7d0}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Modified On" languagecode="1033" />
+                        </labels>
+                        <control id="modifiedon" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="modifiedon" disabled="false" />
+                      </cell>
+                      <cell id="{19c6d1be-e86a-4320-af6d-332a0c773c61}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Longitude" languagecode="1033" />
+                        </labels>
+                        <control id="ava_address1_longitude" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_address1_longitude" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{536cec40-69e3-4dbf-bd7b-d436539d3c5c}" locklevel="0" colspan="1" rowspan="2">
+                        <labels>
+                          <label description="Search Body" languagecode="1033" />
+                        </labels>
+                        <control id="ava_searchfield" classid="{E0DECE4B-6FC8-4A8F-A065-082708572369}" datafieldname="ava_searchfield" disabled="false" />
+                      </cell>
+                      <cell id="{deb04ccc-8487-b090-1160-ae4e4575cabd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Item Color" languagecode="1033" />
+                        </labels>
+                        <control id="ava_itemcolor" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ava_itemcolor" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e92e6f4a-73f1-4ec0-beb0-3f504a1f9e9e}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Record URL" languagecode="1033" />
+                        </labels>
+                        <control id="ava_recordurl" classid="{71716B6C-711E-476C-8AB8-5D11542BFB47}" datafieldname="ava_recordurl" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{09a5ff1d-66d1-43dd-8802-acfd6ec8b8e8}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{f58abe8b-0fe4-41fd-ba55-6125f10528a0}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{8190364f-723d-4005-a0d7-d6f77e889d71}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{9385908a-a363-4300-8a27-3ee7114c1f73}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell locklevel="0" id="{8feffb73-bf89-473b-9173-1f454c7d8deb}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{f2a75b14-0d54-478f-b49b-b20dfd2c5adb}" colspan="1" rowspan="1">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+            <cell id="{e6b7c8b1-620f-48dd-84b7-f11be0829041}" locklevel="0" colspan="1" rowspan="1">
+              <labels>
+                <label description="Owning Business Unit" languagecode="1033" />
+              </labels>
+              <control id="header_owningbusinessunit" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="owningbusinessunit" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{42b98d02-fbbe-4a80-b0e3-a7ab30432614}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{cd9207c7-cb45-4fa2-9112-10fb82a0a258}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{90c7c4e7-2c1c-41e3-b9f3-750a80334a5a}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{053e9994-4ece-4783-9f11-e58914906574}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <controlDescriptions>
+        <controlDescription forControl="{97933e7e-7b96-46ce-8af0-d72ba5067371}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>ava_childfriendly</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_childfriendly</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_childfriendly</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_childfriendly</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{e38f938e-bc88-4f97-82e3-a0af274288f1}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>ava_publictransportnearby</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_publictransportnearby</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_publictransportnearby</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_publictransportnearby</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{e7e67176-ad5c-4096-8b70-3a9030f97d6f}">
+          <customControl id="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" formFactor="0">
+            <parameters>
+              <datafieldname>ava_name</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.Canvas.CanvasControl">
+            <parameters>
+              <record>ava_name</record>
+              <schema type="SingleLine.Text" static="true">{}</schema>
+              <entityName type="SingleLine.Text" static="true">Housing Location</entityName>
+              <appName type="SingleLine.Text" static="true">ava_housinglocationsmanageengagementtemplates_a4d88</appName>
+              <appId type="SingleLine.Text" static="true">c1336d1b-2da6-45ca-9f8c-16c8520e27e2</appId>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Canvas.CanvasControl">
+            <parameters>
+              <record>ava_name</record>
+              <schema type="SingleLine.Text" static="true">{}</schema>
+              <entityName type="SingleLine.Text" static="true">Housing Location</entityName>
+              <appName type="SingleLine.Text" static="true">ava_housinglocationsmanageengagementtemplates_a4d88</appName>
+              <appId type="SingleLine.Text" static="true">c1336d1b-2da6-45ca-9f8c-16c8520e27e2</appId>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <Navigation>
+        <NavBar />
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

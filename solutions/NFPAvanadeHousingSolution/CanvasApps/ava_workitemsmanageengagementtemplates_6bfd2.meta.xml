@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>ava_workitemsmanageengagementtemplates_6bfd2</Name>
+  <AppVersion>2022-10-12T12:53:14Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22094.23.0</CreatedByClientVersion>
+  <MinClientVersion>3.22094.23.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"444","primaryDeviceHeight":"790","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Web","publisherVersion":"3.22094.23","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20220822T122957Z-3.22081.14.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>rgba(255, 255, 255, 1)</BackgroundColor>
+  <DisplayName>Work Items - Manage Engagement Templates</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"8e9e9525-c1ce-4abe-9f5e-bcb7ec963414":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["PowerApp-&gt;CreateEngagementOpportunity"],"dependencies":["af39b91a-3e14-4a34-817c-e79f62735cb4"],"dependents":[],"parameterHints":{"workflowName":{"value":"56295b41-0696-4dc0-9c31-7c316ca3928f"},"workflowEntityId":{"value":"95ddbc29-1f1e-ed11-b83e-000d3a3b4b50"},"af39b91a-3e14-4a34-817c-e79f62735cb4":{"value":"shared_commondataserviceforapps"}},"parameterHintsV2":{"workflowName":{"value":"56295b41-0696-4dc0-9c31-7c316ca3928f"},"workflowEntityId":{"value":"95ddbc29-1f1e-ed11-b83e-000d3a3b4b50"},"shared_commondataserviceforapps":{"value":"af39b91a-3e14-4a34-817c-e79f62735cb4"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"af39b91a-3e14-4a34-817c-e79f62735cb4":{"id":"/providers/microsoft.powerapps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1588/1.0.1588.2938/commondataserviceforapps/icon.png","dataSources":[],"dependencies":[],"dependents":["8e9e9525-c1ce-4abe-9f5e-bcb7ec963414"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium"}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Work Items":{"entitySetName":"msnfp_workitems","logicalName":"msnfp_workitem"},"Engagement Opportunity Templates":{"entitySetName":"ava_engagementopportunitytemplates","logicalName":"ava_engagementopportunitytemplate"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"msnfp_workitem","componenttype":1},{"logicalname":"ava_engagementopportunitytemplate","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/ava_workitemsmanageengagementtemplates_6bfd2_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/ava_workitemsmanageengagementtemplates_6bfd2_DocumentUri.msapp</DocumentUri>
+</CanvasApp>
