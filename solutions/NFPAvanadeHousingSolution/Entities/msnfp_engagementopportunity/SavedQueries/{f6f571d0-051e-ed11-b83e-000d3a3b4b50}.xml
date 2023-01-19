@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>0</isdefault>
+    <savedqueryid>{f6f571d0-051e-ed11-b83e-000d3a3b4b50}</savedqueryid>
+    <layoutxml>
+      <grid name="resultset" jump="msnfp_engagementopportunitytitle" select="1" icon="1" preview="1">
+        <row name="result" id="msnfp_engagementopportunityid">
+          <cell name="createdon" width="100" />
+          <cell name="msnfp_engagementopportunitytitle" width="200" />
+          <cell name="ava_housinglocationid" width="194" />
+          <cell name="msnfp_workitemid" width="230" />
+          <cell name="statuscode" width="100" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>0</querytype>
+    <fetchxml>
+      <fetch version="1.0" output-format="xml-platform" mapping="logical" distinct="true">
+        <entity name="msnfp_engagementopportunity">
+          <attribute name="msnfp_engagementopportunitytitle" />
+          <attribute name="msnfp_engagementopportunityid" />
+          <attribute name="createdon" />
+          <attribute name="ava_housinglocationid" />
+          <attribute name="statuscode" />
+          <attribute name="msnfp_workitemid" />
+          <order attribute="createdon" descending="true" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+            <condition attribute="msnfp_type" operator="eq" value="751960000" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0.0.2</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Active Housing Engagements" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>

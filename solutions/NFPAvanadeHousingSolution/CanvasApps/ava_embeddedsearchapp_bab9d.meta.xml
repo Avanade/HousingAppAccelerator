@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>ava_embeddedsearchapp_bab9d</Name>
+  <AppVersion>2022-10-26T13:57:09Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22102.33.0</CreatedByClientVersion>
+  <MinClientVersion>3.22102.33.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Web","publisherVersion":"3.22102.33","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20221026T125002Z-3.22102.33.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>rgba(255, 255, 255, 1)</BackgroundColor>
+  <DisplayName>Embedded Search App</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"ea415640-453c-4067-82ca-bea63f93312b":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["PowerApp-&gt;MatchHousingNeeds"],"dependencies":["7dff193a-a008-43c2-9fdc-da3fc6c04490"],"dependents":[],"parameterHints":{"workflowName":{"value":"7bf61ac8-0ab2-4f71-aca8-3cbf97436462"},"workflowEntityId":{"value":"d1108a50-7e1c-ed11-b83e-000d3a3b4b50"},"7dff193a-a008-43c2-9fdc-da3fc6c04490":{"value":"shared_commondataserviceforapps"}},"parameterHintsV2":{"workflowName":{"value":"7bf61ac8-0ab2-4f71-aca8-3cbf97436462"},"workflowEntityId":{"value":"d1108a50-7e1c-ed11-b83e-000d3a3b4b50"},"shared_commondataserviceforapps":{"value":"7dff193a-a008-43c2-9fdc-da3fc6c04490"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"7dff193a-a008-43c2-9fdc-da3fc6c04490":{"id":"/providers/microsoft.powerapps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1588/1.0.1588.2938/commondataserviceforapps/icon.png","dataSources":[],"dependencies":[],"dependents":["ea415640-453c-4067-82ca-bea63f93312b"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium"},"6d834ad8-9f7c-40c4-a362-6e6aecc11163":{"id":"/providers/microsoft.powerapps/apis/shared_microsoftspatialservices","displayName":"Spatial Services","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1601/1.0.1601.3047/microsoftspatialservices/icon.png","dataSources":["SpatialServices"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium"}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Needs":{"entitySetName":"msnfp_needs","logicalName":"msnfp_need"},"Housing Locations":{"entitySetName":"ava_housinglocations","logicalName":"ava_housinglocation"},"Users":{"entitySetName":"systemusers","logicalName":"systemuser"},"Contacts":{"entitySetName":"contacts","logicalName":"contact"},"Items":{"entitySetName":"msnfp_items","logicalName":"msnfp_item"},"Work Items":{"entitySetName":"msnfp_workitems","logicalName":"msnfp_workitem"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"msnfp_need","componenttype":1},{"logicalname":"ava_housinglocation","componenttype":1},{"logicalname":"systemuser","componenttype":1},{"logicalname":"contact","componenttype":1},{"logicalname":"msnfp_item","componenttype":1},{"logicalname":"msnfp_workitem","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/ava_embeddedsearchapp_bab9d_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/ava_embeddedsearchapp_bab9d_DocumentUri.msapp</DocumentUri>
+</CanvasApp>

@@ -1,0 +1,154 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ava_sharedcommondataserviceforapps_cf475"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "7c4790a7-63d0-491d-abc8-ae58d0f617d8"
+          },
+          "type": "Request",
+          "kind": "PowerApp",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "InitializeWorkItemGUID_Value": {
+                  "type": "string",
+                  "description": "Enter initial value",
+                  "x-ms-powerflows-param-ispartial": false
+                }
+              },
+              "required": [
+                "InitializeWorkItemGUID_Value"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Initialize_WorkItemGUID": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "a9384d74-b19a-4639-ae9e-0bbf838b343f"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "WorkItemGUID",
+                "type": "string",
+                "value": "@{triggerBody()['InitializeWorkItemGUID_Value']}"
+              }
+            ]
+          }
+        },
+        "Get_WorkItem": {
+          "runAfter": {
+            "Initialize_WorkItemGUID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "4a3c288f-7c83-4808-b576-9a1875793ea7"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "msnfp_workitems",
+              "recordId": "@variables('WorkItemGUID')"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        },
+        "Update_HousingLocation": {
+          "runAfter": {
+            "Get_WorkItem": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "281976d5-153d-41aa-9d69-e24d939f1ad8"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "ava_housinglocations",
+              "recordId": "@outputs('Get_WorkItem')?['body/_ava_housinglocationid_value']",
+              "item/ava_occupantid@odata.bind": "contacts\\@{outputs('Get_WorkItem')?['body/_msnfp_beneficiaryid_value']}",
+              "item/statuscode": 5
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        },
+        "Update_Work_Item": {
+          "runAfter": {
+            "Update_HousingLocation": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "f8337d13-3629-4ee0-a526-39d533254cb9"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateRecord",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "msnfp_workitems",
+              "recordId": "@variables('WorkItemGUID')",
+              "item/statuscode": 844060002
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

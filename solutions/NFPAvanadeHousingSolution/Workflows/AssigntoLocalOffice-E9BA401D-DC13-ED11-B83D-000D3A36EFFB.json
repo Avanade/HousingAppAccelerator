@@ -1,0 +1,529 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "ava_sharedcommondataserviceforapps_cf475"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_bingmaps": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedbingmaps_498bd"
+        },
+        "api": {
+          "name": "shared_bingmaps"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "splitOn": "@triggerBody()['rows']",
+          "metadata": {
+            "operationMetadataId": "673e3d06-233e-473c-9ba1-7c71569c6ea2"
+          },
+          "type": "Request",
+          "kind": "ApiConnection",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "rows": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "entity": {
+                        "type": "object",
+                        "properties": {
+                          "entity": {
+                            "type": "object",
+                            "properties": {
+                              "BPFFlowStageEntityRecordId": {
+                                "title": "BPF Flow Stage Table Row Id",
+                                "type": "string"
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "entity"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "entity"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "rows"
+              ]
+            },
+            "host": {
+              "connection": {
+                "name": "@parameters('$connections')['shared_commondataserviceforapps']['connectionId']"
+              }
+            },
+            "operationId": "FlowStepRun",
+            "parameters": {}
+          }
+        }
+      },
+      "actions": {
+        "Initialize_HousingRecordID": {
+          "runAfter": {
+            "Initialize_DistanceLimit": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "d79d4076-4c15-486c-bdd0-0cb7f68abad2"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "HousingRecordID",
+                "type": "string",
+                "value": "@triggerBody()?['entity']?['entity']?['BPFFlowStageEntityRecordId']"
+              }
+            ]
+          }
+        },
+        "Initialize_Distance": {
+          "runAfter": {
+            "Initialize_HousingRecordID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "89a362cd-b5c1-410e-a8a8-9e908696ddf2"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "Distance",
+                "type": "float",
+                "value": 40000
+              }
+            ]
+          }
+        },
+        "Initialize_BusinessUnitID": {
+          "runAfter": {
+            "Initialize_Distance": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "3f08614e-0ea1-458f-9396-789c64918dbf"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "BusinessUnitID",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "List_rows": {
+          "runAfter": {
+            "Get_HousingLocation": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "8fa0f6fe-82cf-4e1d-b9ff-907a98e8ed36"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "ListRecords",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "businessunits",
+              "fetchXml": "<fetch version=\"1.0\" output-format=\"xml-platform\" mapping=\"logical\" distinct=\"false\">\n  <entity name=\"businessunit\">\n    <attribute name=\"name\" />\n    <attribute name=\"address1_telephone1\" />\n    <attribute name=\"websiteurl\" />\n    <attribute name=\"parentbusinessunitid\" />\n    <attribute name=\"address1_latitude\" />\n    <attribute name=\"address1_longitude\" />\n    <attribute name=\"ava_housingofficerid\" />\n    <attribute name=\"businessunitid\" />\n    <order attribute=\"name\" descending=\"false\" />\n    <filter type=\"and\">\n      <condition attribute=\"address1_latitude\" operator=\"not-null\" />\n    </filter>\n  </entity>\n</fetch>"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        },
+        "Get_HousingLocation": {
+          "runAfter": {
+            "Initialize_BusinessUnitName": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e409b446-90f2-4f82-8126-44790d676b64"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetItem",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "ava_housinglocations",
+              "recordId": "@variables('HousingRecordID')"
+            },
+            "authentication": {
+              "type": "Raw",
+              "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+            }
+          }
+        },
+        "Apply_to_each": {
+          "foreach": "@outputs('List_rows')?['body/value']",
+          "actions": {
+            "GetDistance": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "6eb072d6-a795-4280-b2a9-49c482c9373a"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_bingmaps",
+                  "operationId": "GetRouteV3",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_bingmaps"
+                },
+                "parameters": {
+                  "wp.0": "@{outputs('Get_HousingLocation')?['body/ava_address1_latitude']},@{outputs('Get_HousingLocation')?['body/ava_address1_longitude']}",
+                  "wp.1": "@{items('Apply_to_each')?['address1_latitude']},@{items('Apply_to_each')?['address1_longitude']}",
+                  "travelMode": "Driving",
+                  "avoid_highways": false,
+                  "avoid_tolls": false,
+                  "avoid_ferry": false,
+                  "avoid_minimizeHighways": false,
+                  "avoid_minimizeTolls": false,
+                  "avoid_borderCrossing": false
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            },
+            "Condition": {
+              "actions": {
+                "Set_HousingOfficer": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "d68d0912-aad8-4c81-8020-1d0dac45cd7d"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "HousingOfficerID",
+                    "value": "@items('Apply_to_each')?['_ava_housingofficerid_value']"
+                  }
+                },
+                "Set_Distance_TRUE": {
+                  "runAfter": {
+                    "Set_DistanceUnit": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "5f766f73-5d96-4d4b-9de1-f881d14f9c63"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "Distance",
+                    "value": "@outputs('GetDistance')?['body/travelDistance']"
+                  }
+                },
+                "Set_BusinessUnitName": {
+                  "runAfter": {
+                    "Set_HousingOfficer": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "a2cc0af8-91d0-48b2-b0e8-a0e657cc8c4d"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "BusinessUnitName",
+                    "value": "@items('Apply_to_each')?['name']"
+                  }
+                },
+                "Set_DistanceUnit": {
+                  "runAfter": {
+                    "Set_BusinessUnitName": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "ace5898d-38df-4380-a17d-fd15aa6ee363"
+                  },
+                  "type": "SetVariable",
+                  "inputs": {
+                    "name": "DistanceUnit",
+                    "value": "@outputs('GetDistance')?['body/distanceUnit']"
+                  }
+                }
+              },
+              "runAfter": {
+                "GetDistance": [
+                  "Succeeded"
+                ]
+              },
+              "expression": {
+                "less": [
+                  "@outputs('GetDistance')?['body/travelDistance']",
+                  "@variables('Distance')"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "951fb374-244a-4f42-b724-10eca6f4f261"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {
+            "List_rows": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "0e1d6395-e77d-49af-87d7-97d74f3049ce"
+          },
+          "type": "Foreach"
+        },
+        "Initialize_HousingOfficerID": {
+          "runAfter": {
+            "Initialize_BusinessUnitID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ed04e140-34d0-4999-a8e5-6fa364719c01"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "HousingOfficerID",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Initialize_DistanceUnit": {
+          "runAfter": {
+            "Initialize_HousingOfficerID": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "575c8e7c-06c3-45d3-bdba-2a64ec318012"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "DistanceUnit",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Initialize_BusinessUnitName": {
+          "runAfter": {
+            "Initialize_DistanceUnit": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "bdcfa9d0-395e-4e34-8de6-4641438af4b7"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "BusinessUnitName",
+                "type": "string"
+              }
+            ]
+          }
+        },
+        "Initialize_DistanceLimit": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "4e3c6579-cc10-4f57-b3c9-e3c347cde313"
+          },
+          "type": "InitializeVariable",
+          "inputs": {
+            "variables": [
+              {
+                "name": "DistanceLimit",
+                "type": "float",
+                "value": 300
+              }
+            ]
+          },
+          "description": "Distance limit to fall within Local Office."
+        },
+        "Check_Distance_limit": {
+          "actions": {
+            "Assign_and_update_Housing_Location": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "6c17e32c-b0d9-40d6-b1c8-3d8d41406ebb"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "ava_housinglocations",
+                  "recordId": "@outputs('Get_HousingLocation')?['body/ava_housinglocationid']",
+                  "item/ava_distancelocaloffice": "@variables('Distance')",
+                  "item/ownerid@odata.bind": "systemusers\\@{variables('HousingOfficerID')}"
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            },
+            "Make_note_of_Assignment": {
+              "runAfter": {
+                "Assign_and_update_Housing_Location": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a3188f92-aecd-4c50-b9ec-71a683b09394"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "CreateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "annotations",
+                  "item/subject": "Assigned to Local Office @{variables('BusinessUnitName')}",
+                  "item/notetext": "Distance to local office: @{variables('Distance')} @{variables('DistanceUnit')}.",
+                  "item/isdocument": false,
+                  "item/objectid_ava_housinglocation@odata.bind": "ava_housinglocations\\@{variables('HousingRecordID')}"
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            },
+            "Assign_Landlord_to_HousingOfficer": {
+              "runAfter": {
+                "Make_note_of_Assignment": [
+                  "Succeeded"
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "a02790c6-9238-4b79-b3af-76c6b9bd9072"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "host": {
+                  "connectionName": "shared_commondataserviceforapps",
+                  "operationId": "UpdateRecord",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                },
+                "parameters": {
+                  "entityName": "contacts",
+                  "recordId": "@outputs('Get_HousingLocation')?['body/_ava_landlordid_value']",
+                  "item/ownerid@odata.bind": "systemusers\\@{variables('HousingOfficerID')}"
+                },
+                "authentication": {
+                  "type": "Raw",
+                  "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                }
+              }
+            }
+          },
+          "runAfter": {
+            "Apply_to_each": [
+              "Succeeded"
+            ]
+          },
+          "else": {
+            "actions": {
+              "Distance_Issue_Note": {
+                "runAfter": {},
+                "metadata": {
+                  "operationMetadataId": "a3188f92-aecd-4c50-b9ec-71a683b09394"
+                },
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_commondataserviceforapps",
+                    "operationId": "CreateRecord",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+                  },
+                  "parameters": {
+                    "entityName": "annotations",
+                    "item/subject": "Not assigned due to distance to nearest office @{variables('BusinessUnitName')}.",
+                    "item/notetext": "Distance to local office: @{variables('Distance')} @{variables('DistanceUnit')}.",
+                    "item/isdocument": false,
+                    "item/objectid_ava_housinglocation@odata.bind": "ava_housinglocations\\@{variables('HousingRecordID')}"
+                  },
+                  "authentication": {
+                    "type": "Raw",
+                    "value": "@json(decodeBase64(triggerOutputs().headers['X-MS-APIM-Tokens']))['$ConnectionKey']"
+                  }
+                }
+              }
+            }
+          },
+          "expression": {
+            "less": [
+              "@variables('Distance')",
+              "@variables('DistanceLimit')"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ab2e4781-1197-4472-94c6-2ad529d73d85"
+          },
+          "type": "If"
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}
