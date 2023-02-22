@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{ff652dcb-8718-ed11-b83e-00224804d22f}</formid>
+    <IntroducedVersion>1.0.0.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls" maxWidth="3200" showImage="true">
+      <tabs>
+        <tab id="{c11f4e1a-af94-4d00-86e5-07549a2564aa}" name="{c11f4e1a-af94-4d00-86e5-07549a2564aa}" expanded="true" locklevel="0" showlabel="true" verticallayout="true" IsUserDefined="1" labelid="{888bdb87-4baa-4b53-aea2-fd35e765495a}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="35%">
+              <sections>
+                <section id="{e158b750-4126-420d-a825-dbcd27198f65}" showlabel="false" IsUserDefined="0" showbar="false" labelid="{cd47f931-4b82-43b0-b184-af1b4b9751b4}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{489442a9-66d8-a932-c60d-11b466456335}" locklevel="0" showlabel="true" labelid="{47948399-2c4a-4078-8940-219d40e85d16}">
+                        <labels>
+                          <label description="Beneficiary" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="msnfp_beneficiaryid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="msnfp_beneficiaryid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{5de5cc9d-d857-43ec-b144-6bd86d193756}" labelid="{d59846c3-3ce8-4b36-aff3-cdaeb28f2344}">
+                        <labels>
+                          <label description="Need Name" languagecode="1033" />
+                        </labels>
+                        <control id="msnfp_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="msnfp_name" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{988b7c67-cd3e-0380-34aa-17656c913b86}" locklevel="0" showlabel="true" labelid="{b46bdc68-b6d4-468d-966b-6a7cd3837279}">
+                        <labels>
+                          <label description="Need Type" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="msnfp_needtype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="msnfp_needtype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e61b4a3c-676e-6444-ee18-bd253ec4694c}" locklevel="0" showlabel="true" labelid="{750eb30d-08d0-4408-8c93-4fde8d41757e}">
+                        <labels>
+                          <label description="Severity" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="msnfp_severitytype" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="msnfp_severitytype" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{81ed847c-6c6b-467d-cdc4-d373277586b0}" locklevel="0" showlabel="true" rowspan="3" labelid="{2257098b-3f2f-481f-8fb9-ed8321776e92}" colspan="1">
+                        <labels>
+                          <label description="Description" languagecode="1033" />
+                        </labels>
+                        <control disabled="false" id="msnfp_description" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="msnfp_description" uniqueid="{17468192-e431-7b60-7939-b0e430313e8a}" />
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="65%">
+              <sections>
+                <section name="{c11f4e1a-af94-4d00-86e5-07549a2564aa}_section_4" id="1ec6c613-9bf7-4ed7-b540-aaad2ada1699" IsUserDefined="0" locklevel="0" showlabel="true" showbar="false" layout="varwidth" celllabelalignment="Left" celllabelposition="Left" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Housing Requests" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{71dd150f-b327-491a-adf1-e5cdcc5a3832}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Housing Type" languagecode="1033" />
+                        </labels>
+                        <control id="ava_housingtype" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ava_housingtype" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{85e20048-04ed-43ee-9071-0c99f8445e71}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Housing City" languagecode="1033" />
+                        </labels>
+                        <control id="ava_housingcity" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_housingcity" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e3d63af4-00bc-4a2e-84c8-add5937174fd}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Housing State" languagecode="1033" />
+                        </labels>
+                        <control id="ava_housingstate" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_housingstate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2b09d159-c736-452e-bf4e-db9ad7478549}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Number of Bedrooms" languagecode="1033" />
+                        </labels>
+                        <control id="ava_numberofbedrooms" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ava_numberofbedrooms" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{cca578fc-dfd7-48aa-b782-958389b8c880}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Number of Bathrooms" languagecode="1033" />
+                        </labels>
+                        <control id="ava_numberofbathrooms" classid="{3EF39988-22BB-4F0B-BBBE-64B5A3748AEE}" datafieldname="ava_numberofbathrooms" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{e98dbedf-a316-418e-82c6-45a23f931880}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Child Friendly" languagecode="1033" />
+                        </labels>
+                        <control id="ava_childfriendly" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="ava_childfriendly" disabled="false" uniqueid="{5da17d50-2862-498c-8024-74716f53b0c0}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{9aa9693c-777c-4fba-a35d-a0e1ba7c1a99}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Child Friendly Filter Value" languagecode="1033" />
+                        </labels>
+                        <control id="ava_childfriendlyfiltervalue" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_childfriendlyfiltervalue" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{73a6adad-6291-4362-a0df-a3efcf66f806}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Near Public Transport" languagecode="1033" />
+                        </labels>
+                        <control id="ava_nearpublictransport" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="ava_nearpublictransport" disabled="false" uniqueid="{93a99358-1f96-4985-a898-1f30e7a65a24}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{3a532d28-38b8-4dbf-b946-e5e703a70fa9}" locklevel="0" colspan="1" rowspan="1" visible="false">
+                        <labels>
+                          <label description="Public Transport Filter Value" languagecode="1033" />
+                        </labels>
+                        <control id="ava_publictransportfiltervalue" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="ava_publictransportfiltervalue" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab name="SearchHousing" id="{58157c96-d018-a523-8a6b-7dd597655816}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
+          <labels>
+            <label description="Search for Housing" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="tab_5_section_1" showlabel="false" showbar="false" locklevel="0" id="{3a103818-02c9-0376-08e7-02b176a72988}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c449ee77-1b71-c6b9-0378-ec24ea022e80}" showlabel="false" locklevel="0">
+                        <labels>
+                          <label description="Need Name" languagecode="1033" />
+                        </labels>
+                        <control id="msnfp_name" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="msnfp_name" disabled="false" uniqueid="{8314231d-9038-4d74-4ad5-d4c05484c975}" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab id="{e915b422-195d-3253-e66c-2ca95a6db291}" name="tab_2" expanded="true" locklevel="0" showlabel="true" IsUserDefined="0" labelid="{3cc1062c-311e-4dd6-a446-01dc6f6f4550}">
+          <labels>
+            <label description="Indicators" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="{583c4800-db3c-5d93-bc2d-c97bb5188801}" name="tab_2_section_1" locklevel="0" showlabel="false" IsUserDefined="0" columns="1" showbar="false" labelwidth="115" layout="varwidth" labelid="{b6bfc282-42db-402a-aa50-bfccca0fdf07}">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{d78354e2-72b5-76e2-0077-82051869a453}" showlabel="false" rowspan="6" colspan="1" auto="false" labelid="{4c2780e5-1f61-4f51-ad92-a8e47e4ee866}">
+                        <labels>
+                          <label description="Indicator Value Usages (Need)" languagecode="1033" />
+                        </labels>
+                        <control id="Indicators" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{EF0346E7-984E-EA11-A812-000D3A33FA14}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>msnfp_msnfp_need_msnfp_indicatorvalueusage_needid</RelationshipName>
+                            <TargetEntityType>msnfp_indicatorvalueusage</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{F0824A06-8F43-43FB-9FCB-616BD0D1556A},{EF0346E7-984E-EA11-A812-000D3A33FA14}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>Grid</ChartGridMode>
+                            <VisualizationId />
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>false</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab id="{4c710493-580e-74c8-7906-6b98c7487d09}" name="tab_3" expanded="true" locklevel="0" showlabel="true" IsUserDefined="0" labelid="{2a9d0526-15e4-48ed-a1ef-73265283b597}">
+          <labels>
+            <label description="Work Item Actions" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="{aaa5d72e-e4bb-d557-a758-617db9b3b89b}" name="tab_3_section_1" locklevel="0" showlabel="false" IsUserDefined="0" columns="1" showbar="false" labelwidth="115" layout="varwidth" labelid="{03c76d57-b88d-446a-addb-299741b5778a}">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{3b9bca25-79d7-58aa-eb90-8d087b442022}" showlabel="false" rowspan="6" colspan="1" auto="false" labelid="{c7f8e50f-326a-4f30-b300-d05f41806a48}">
+                        <labels>
+                          <label description="Work Item Actions (Need)" languagecode="1033" />
+                        </labels>
+                        <control id="WorkItemActions" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{2196581E-A323-4BF0-A571-988C0097DEFB}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>msnfp_msnfp_need_msnfp_workitemaction_needid</RelationshipName>
+                            <TargetEntityType>msnfp_workitemaction</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{2196581E-A323-4BF0-A571-988C0097DEFB}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId>{1C7CB760-374F-EA11-A812-000D3A33FA14}</VisualizationId>
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+        <tab id="{981527e9-e616-cc42-213d-3935a1e7162e}" name="tab_4" expanded="true" locklevel="0" showlabel="true" IsUserDefined="0" labelid="{c7d50bcd-aa10-4107-aed7-7b5579acb7de}">
+          <labels>
+            <label description="Work Items" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section id="{31432a80-973e-cbb0-b9a4-ab935cab188b}" name="tab_4_section_1" locklevel="0" showlabel="false" IsUserDefined="0" columns="1" showbar="false" labelwidth="115" layout="varwidth" labelid="{410fa734-206c-4fa0-b72e-0a768d74840a}">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{1beac900-758b-14d8-5811-068776abe3dd}" showlabel="false" rowspan="6" colspan="1" auto="false" labelid="{283bf081-5672-4b79-b461-aa939d8887b3}">
+                        <labels>
+                          <label description="Work Items" languagecode="1033" />
+                        </labels>
+                        <control id="WorkItems" classid="{E7A81278-8635-4d9e-8D4D-59480B391C5B}" uniqueid="{58868d66-99b6-5097-a014-8d1a6371b58d}" indicationOfSubgrid="true">
+                          <parameters>
+                            <ViewId>{ED243260-E617-433E-B89A-780BDC896DE9}</ViewId>
+                            <IsUserView>false</IsUserView>
+                            <RelationshipName>msnfp_msnfp_need_msnfp_workitem</RelationshipName>
+                            <TargetEntityType>msnfp_workitem</TargetEntityType>
+                            <AutoExpand>Fixed</AutoExpand>
+                            <EnableQuickFind>false</EnableQuickFind>
+                            <EnableViewPicker>false</EnableViewPicker>
+                            <ViewIds>{ED243260-E617-433E-B89A-780BDC896DE9}</ViewIds>
+                            <EnableJumpBar>false</EnableJumpBar>
+                            <ChartGridMode>All</ChartGridMode>
+                            <VisualizationId>{AE76C599-374F-EA11-A812-000D3A33FA14}</VisualizationId>
+                            <IsUserChart>false</IsUserChart>
+                            <EnableChartPicker>true</EnableChartPicker>
+                            <RecordsPerPage>4</RecordsPerPage>
+                            <HeaderColorCode>#F3F3F3</HeaderColorCode>
+                            <RelationshipRoleOrdinal>1</RelationshipRoleOrdinal>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                    <row />
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{d6607a32-faa3-4137-ba2a-e9577d626084}" columns="111">
+        <rows>
+          <row>
+            <cell id="{2a6a549f-bdf7-4f36-b3f5-94bfa0184d19}" showlabel="false" labelid="{ce08998a-a487-4bce-a501-02a435d947a9}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{60dca585-0237-5a12-0c78-52d56124887b}" locklevel="0" showlabel="true" labelid="{a411ced7-e882-4c2b-b734-37b23a3049d3}">
+              <labels>
+                <label description="Status Reason" languagecode="1033" />
+              </labels>
+              <control disabled="false" id="header_statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" />
+            </cell>
+            <cell id="{113673ce-667a-dd06-9019-4bb549bb18c4}" locklevel="0" showlabel="true" labelid="{342f68b9-15eb-436b-904b-1ae1ac1e7dc6}">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control disabled="false" id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <Navigation>
+        <NavBar>
+          <NavBarByRelationshipItem Id="nav_msnfp_msnfp_need_msnfp_indicatorvalueusage_needid" Area="Info" Sequence="10000" RelationshipName="msnfp_msnfp_need_msnfp_indicatorvalueusage_needid" Show="false">
+            <Titles>
+              <Title Text="Indicator Value Usages" LCID="1033" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Id="nav_msnfp_msnfp_need_msnfp_workitemaction_needid" Area="Info" Sequence="10000" RelationshipName="msnfp_msnfp_need_msnfp_workitemaction_needid" Show="false">
+            <Titles>
+              <Title Text="Work Item Actions" LCID="1033" />
+            </Titles>
+          </NavBarByRelationshipItem>
+          <NavBarByRelationshipItem Id="nav_msnfp_msnfp_need_msnfp_workitem" Area="Info" Sequence="10000" RelationshipName="msnfp_msnfp_need_msnfp_workitem" Show="false">
+            <Titles>
+              <Title Text="Work Items" LCID="1033" />
+            </Titles>
+          </NavBarByRelationshipItem>
+        </NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title Text="Common" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title Text="Sales" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title Text="Service" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title Text="Marketing" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title Text="Process Sessions" LCID="1033" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{93a99358-1f96-4985-a898-1f30e7a65a24}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>ava_nearpublictransport</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_nearpublictransport</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_nearpublictransport</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_nearpublictransport</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{5da17d50-2862-498c-8024-74716f53b0c0}">
+          <customControl id="{67FAC785-CD58-4F9F-ABB3-4B7DDC6ED5ED}">
+            <parameters>
+              <datafieldname>ava_childfriendly</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_childfriendly</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_childfriendly</value>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="MscrmControls.FieldControls.ToggleControl">
+            <parameters>
+              <value type="TwoOptions">ava_childfriendly</value>
+            </parameters>
+          </customControl>
+        </controlDescription>
+        <controlDescription forControl="{8314231d-9038-4d74-4ad5-d4c05484c975}">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" formFactor="0">
+            <parameters>
+              <datafieldname>msnfp_name</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" formFactor="1">
+            <parameters>
+              <datafieldname>msnfp_name</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="MscrmControls.Canvas.CanvasControl">
+            <parameters>
+              <record>msnfp_name</record>
+              <schema static="true" type="SingleLine.Text">{}</schema>
+              <entityName static="true" type="SingleLine.Text">Need</entityName>
+              <appName static="true" type="SingleLine.Text">ava_embeddedsearchapp_bab9d</appName>
+              <appId static="true" type="SingleLine.Text">3f7208e6-c973-4b6e-a623-e2fac415e24e</appId>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <footer id="{cd53de5e-92a1-4497-9a66-6540c23f4e58}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{d360fbcf-424f-44bc-96ad-8f3f478ee782}" showlabel="false" labelid="{108f7e86-f179-4724-87df-3477e4b7a700}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{0abc2507-092a-47c8-8d1e-4a0a7c98a4f3}" showlabel="false" labelid="{ed8f9867-19d2-4d3f-acf0-d94c74c90e75}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{7388b4d1-e880-4a52-8e79-6db03952ff04}" showlabel="false" labelid="{fe8a4c06-7d82-426c-87c8-e5d4ce7fd7f4}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <DisplayConditions Order="1" FallbackForm="true">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+        <Role Id="{4328a9a3-e2cb-4e58-ac57-ac6a1ebcd828}" />
+        <Role Id="{bf91287f-df26-49c1-b7dc-b45a538e94d6}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Housing Need" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for Housing Needs" languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
