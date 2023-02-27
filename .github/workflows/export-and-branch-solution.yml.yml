@@ -25,9 +25,9 @@ on:
        default: solutions/
 env:
 #edit your values here
-  ENVIRONMENT_URL: 'https://oltivapoc.crm.dynamics.com/'
-  CLIENT_ID: '32bb0ddf-9787-469a-b541-bcb48d9e21f8'
-  TENANT_ID: '00c4488b-0fd6-48f0-82d0-772bd46df083'
+  ENVIRONMENT_URL: ''
+  CLIENT_ID: ''
+  TENANT_ID: ''
 
 jobs:
   export-from-dev:
