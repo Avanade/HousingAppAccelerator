@@ -1,7 +1,5 @@
 
-Add a short description of your project.
-DELETE THIS COMMENT
-```
+Embedded within the Microsoft Nonprofit Common Data Model, a power platform-based solution that will support nonprofit organizations in the processing, governance and insights related to housing needs, housing providers/landlords and available housing locations. The solution will allow organizations the ability to quickly manage refugee needs and facilitate safe housing and related support management.  PowerBI and Bing Maps enable map visualization plotting housing opportunities on a geographical area with heatmap. It supports a Search and Match process for matching available housing to a displaced person's needs.  
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 ![GitHub issues](https://img.shields.io/github/issues/Avanade/avanade-template)
@@ -12,6 +10,8 @@ DELETE THIS COMMENT
 
 
 ## Overview
+Embedded within the Microsoft Nonprofit Common Data Model, a power platform-based solution that will support nonprofit organizations in the processing, governance and insights related to housing needs, housing providers/landlords and available housing locations. The solution will allow organizations the ability to quickly manage refugee needs and facilitate safe housing and related support management.  PowerBI and Bing Maps enable map visualization plotting housing opportunities on a geographical area with heatmap. It supports a Search and Match process for matching available housing to a displaced person's needs.  
+
 The solution aligns the capabilities of Microsoft 365, Power Platform, Dynamics 365 and Azure to address common nonprofit scenarios. 
 The Housing solutions can easily be incorporated to the other nonprofit processes like:
     Volunteer management
@@ -36,7 +36,7 @@ avanade-template is available under the [MIT Licence](./LICENCE).
 ## Documentation
 The `docs` folder contains
 Installation Guide
-User Guide
+
 
 
 ## Contact
