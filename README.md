@@ -21,9 +21,8 @@ The Housing solutions can easily be incorporated to the other nonprofit processe
     Program Management
 
 
-```
+### Project contents
 The project consists of a solution file with all the apps, flows, tables, forms, dashboards etc included in it. Please refer to the installation guide for step by step intstallation and post configuration steps. The repos also consists to a Microsoft Forms template file  (that can be duplicated) link in the Installation Guide to input landlord and housing location data. The Power BI template is also present that can be published to respective tenant. The User Guide will help navigate step by step through the solution.
-```
 
 ## Licensing
 HousingAppAccelerator is available under the [MIT Licence](./LICENCE).
